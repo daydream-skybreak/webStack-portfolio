@@ -59,6 +59,9 @@ If you wish to use this models as an endpoint, you can setup the program in a se
 - <root_domain>/api/blogs/update/:id - update a blog by its id
 - <root_domain>/api/blogs/delete/:id - delete a blog by its id
 
+## Technologies Used
+[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white(https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white))](https://www.mongodb.com/) [![Expressjs](https://img.shields.io/badge/express-green?style=for-the-badge&logo=express)](https://expressjs.com/) [![Mongoose](https://img.shields.io/badge/mongoose-green?style=for-the-badge&logo=mongoose)](https://mongoosejs.com/) [![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![vs code](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)](https://code.visualstudio.com/)
+
 ## Authors
 ### Mulugeta Alicho Wadebo
 
