@@ -12,11 +12,12 @@ app.use('/api/blogs', blogRouter)
  * username - mongodb atlas username
  * password - password to the mongo atlas database
  */
-const username = process.env.USERNAME
+const username = process.env.USER
 const password = process.env.PASSWORD
+const port = process.env.PORT
 mongoose
     .connect(`mongodb+srv://${username}:${password}@portfolio-x.lpwhmwr.mongodb.net/blog?retryWrites=true&w=majority`)
-    .then(() => app.listen(5000))
+    .then(() => app.listen(port))
     .then(() =>  console.log('Connected to mongoDB and listening port 5000'))
     .catch((err) => console.error(`Error: ${err}`))
 

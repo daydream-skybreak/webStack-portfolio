@@ -17,6 +17,9 @@ export const getAllUsers = async (req, res, next) => {
 }
 export const signUp = async (req, res, next) => {
     const {name, email, password} = req.body;
+    if (!name) return res.status(400).json({message: "Please provide name"})
+    if (!email) return res.status(400).json({message: "Please provide E-mail"})
+    if (!password) return res.status(400).json({message: "Please provide password"})
 
     let existingUser;
     try {
@@ -43,6 +46,9 @@ export const signUp = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
     const { email, password } = req.body;
+    if (!email) return res.status(400).json({message: "Please provide E-mail"})
+    if (!password) return res.status(400).json({message: "Please provide password"})
+
     let existingUser;
     try {
         existingUser = await User.findOne({ email })
