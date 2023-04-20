@@ -1,127 +1,72 @@
-# REST API of blog post APP
 
-## Installation
+# Rest API for blog post
 
-To install the module, run
+## Introduction
 
-```sh
-yarn add nodejs-blog
-```
+This is an api that is going to manage the backend logic of a blog post. It handles the signup, login, and blog creation, updation, deletion and search.
 
-or
+## Features
+- Signing up
+- logging in
+- Getting all blogs
+- Getting a specific blog
+- Adding a blog
+- updating a blog
+- deleting a blog
+## Usage
 
-```sh
-npm install nodejs-blog
-```
 
-For contributing to the development, fork the [GitHub repository](https://github.com/daydream-skybreak/webStack-portfolio.git).
+### For using as a base to other projects
 
-## Configuration
+This can be used to make the API customizable.
 
-*This part is not implemented in the code yet.*
+First clone the repostiory using one of the links provided below.
 
-To use the NodeJS Blog module, first, import the package
+For https clone
+~~~
+https://github.com/daydream-skybreak/webStack-portfolio.git
+~~~
 
-```js
-const nodeBlog = require('nodejs-blog');
-const { authors, auth, users, categories, articles } = require('nodejs-blog');
-```
+For ssh clone
+~~~
+git@github.com:daydream-skybreak/webStack-portfolio.git
+~~~
 
-to start using the package, create a new blog object:
+Afterwards set up your environmental variables as follows:
+~~~
+export USER=<your mongo username> PASSWORD=<your_mongo_password> PORT=<the port you want to run your server in>
+~~~
 
-```js
-const client = 'YOUR_DB_CLIENT'; // for more info, see https://knexjs.org/
-const host = 'YOUR_DB_HOST';
-const database = 'YOUR_DB_NAME';
-const user = 'YOUR_DB_USER';
-const pass = 'YOUR_DB_PASS';
-const debug = true || false;
-const blog = nodeBlog(client, host, user, database, password, debug);
-```
+Before starting the server, run `npm install` to install all the dependencies that are needed for the API.
 
-For authentication you should set the following environment (`process.env.[variable] = value`) variables, or the auth methods will not work:
-```
-SALT_ROUNDS=number
-JWT_SECRET=string
-JWT_EXPIRES_IN_DAYS=number_of_days
-```
+Then run the following code to run the server
+~~~
+npm start
+~~~
+Then the sky is the limit
 
-Then you can use the imported functions as you wish, for example:
+### Use as API endpoint
 
-```js
-const posts = await articles.list(blog);
-```
+If you wish to use this models as an endpoint, you can setup the program in a separate server and, by providing a root domain, use the endpoints that are provided by the program.
 
-Just send the `blog` instance as the first argument and the rest of the arguments second. This is because this way the same logic can be applied to multiple blog instances within an application.
+#### API endpoints
 
-The available methods are:
+- <root_domain>/api/users/signup - to sign up a new user
+- <root_domain>/api/users/login - to login to your account
+- <root_domain>/api/blogs/ - to see all blogs
+- <root_domain>/api/blogs/:id - get blog by its id
+- <root_domain>/api/blogs/add - add a blog
+- <root_domain>/api/blogs/update/:id - update a blog by its id
+- <root_domain>/api/blogs/delete/:id - delete a blog by its id
 
-```js
-authors.list(blog)
-authors.get(blog, id)
-authors.add(blog, authorObject)
-authors.modify(blog, id, modifiedData)
-authors.delete(blog, id)
-auth.authenticate(blog, username, password) // Returns true/false
-auth.generateToken(blog, username, password) // Returns JWT, throws error if invalid credentials
-auth.decode(jwt) // Returns decoded object
-auth.validate(blog, username, password) // Returns true/false
-users.list(blog)
-users.get(blog, id)
-users.add(blog, userObject)
-users.modify(blog, id, modifiedData)
-users.delete(blog, id)
-categories.list(blog)
-categories.get(blog, id)
-categories.add(blog, categoryObject)
-categories.modify(blog, id, modifiedData)
-categories.delete(blog, id)
-articles.list(blog)
-articles.get(blog, id)
-articles.add(blog, articleObject)
-// articles.modify(blog, id, modifiedData) // not available yet
-articles.delete(blog, id)
-```
+## Authors
+### Mulugeta Alicho Wadebo
 
-## Running the API as a standalone service (still in development, might not work 100%)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/anem_achiso) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mulugeta-wodebo-843118170)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://www.linkedin.com/in/adonay-desta-63096b237)
 
-First clone the repository and `cd` into the directory.
+### Adonay Desta Yitbarek
 
-To run NodeJS Blog as a standalone service, run `cp .env.example .env` to create the `.env` file.
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/A_trooper323?t=UJGqtvrGVLgAhnHr5xBf5A&s=09) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adonay-desta-63096b237)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://www.linkedin.com/in/adonay-desta-63096b237)
 
-Set your database details and preferences in the `.env` file and run `yarn run start`.
 
-The API documentation can be generated using SwaggerUI. The contents can be found in `./swagger.yml`.
 
-For authentication, add a `Authorization` header, with a bearer token, following the `Bearer [jwt-token]` convention.
-
-## Development
-
-For development, the following commands are available:
-
-| Command | Functionality |
-| - | - |
-| `yarn run dev` | Runs a `nodemon` server for the `server/server.js` file, and exposing the standalone service to your `localhost` |
-| `yarn run cli` | Runs the CLI tool created for simple CRUD operations without accessing the database directly |
-| `yarn run lint` | Runs ESLint, for PRs this should always pass |
-| `yarn run test` | Runs Jest once, for PRs this should always pass. Your database must be available as it is used to run tests on (beware: all existing data will be wiped, we recommend using a separate test-database, this can be set in the `.env` file) |
-| `yarn run test:watch` | Same as `yarn run test`, but it Jest watches for changes |
-| `yarn run coverage` | Creates coverage report, for this the test database should also be available |
-| `yarn run migrate` | Migrates your database (normal one, not test database) to the most recent migration, seeds will not be ran |
-| `yarn run reinstall` | Deletes the `node_modules/` folder and reinstalls everything, if you get some stange dependency errors, run this command |
-| `yarn run clean` | Deletes folders `build/`, `dist/` and `coverage/` |
-
-### Node Environments
-
-The following NodeJS Environments are integrated:
-
-| Env | Effect |
-| --- | ------ |
-| development | Will add development headers, and improve logging experience |
-| test | Will use test database, should only be used for automatic testing |
-
-## Authors :black_nib:
-
-Mulugeta Achiso Wodebo - [Linkedin](https://www.linkedin.com/in/mulugeta-wodebo-843118170) | [Twitter](https://twitter.com/anem_achiso) | [GitHub](https://github.com/Anemachiso)
-
-Adonay Yitbarek - [Github](https://github.com/daydream-skybreak)
