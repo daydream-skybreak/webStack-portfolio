@@ -18,6 +18,6 @@ const port = process.env.PORT
 mongoose
     .connect(`mongodb+srv://${username}:${password}@portfolio-x.lpwhmwr.mongodb.net/blog?retryWrites=true&w=majority`)
     .then(() => app.listen(port))
-    .then(() =>  console.log('Connected to mongoDB and listening port 5000'))
+    .then(() =>  console.log(`Connected to mongoDB and listening port ${port}`))
     .catch((err) => console.error(`Error: ${err}`))
 

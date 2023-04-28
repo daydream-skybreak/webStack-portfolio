@@ -59,14 +59,18 @@ If you wish to use this models as an endpoint, you can setup the program in a se
 - <root_domain>/api/blogs/update/:id - update a blog by its id
 - <root_domain>/api/blogs/delete/:id - delete a blog by its id
 
-## Authors
-### Mulugeta Alicho Wadebo
 
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/anem_achiso) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mulugeta-wodebo-843118170)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://www.linkedin.com/in/adonay-desta-63096b237)
+## Technologies Used
+[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white(https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white))](https://www.mongodb.com/) [![Expressjs](https://img.shields.io/badge/express-green?style=for-the-badge&logo=express)](https://expressjs.com/) [![Mongoose](https://img.shields.io/badge/mongoose-green?style=for-the-badge&logo=mongoose)](https://mongoosejs.com/) [![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![vs code](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)](https://code.visualstudio.com/)
+## Authors
+### Mulugeta Achiso Wodebo
+
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/anem_achiso) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mulugeta-wodebo-843118170)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://github.com/Anemachiso)
 
 ### Adonay Desta Yitbarek
 
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/A_trooper323?t=UJGqtvrGVLgAhnHr5xBf5A&s=09) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adonay-desta-63096b237)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://www.linkedin.com/in/adonay-desta-63096b237)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/A_trooper323?t=UJGqtvrGVLgAhnHr5xBf5A&s=09) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adonay-desta-63096b237)     [![Github](https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github)](https://github.com/daydream-skybreak)
 
 
 
