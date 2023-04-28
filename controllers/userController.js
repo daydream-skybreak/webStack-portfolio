@@ -1,5 +1,5 @@
 import User from "../models/User";
-
+import sha1 from "sha1"
 export const getAllUsers = async (req, res, next) => {
     let users;
     try {
@@ -30,10 +30,11 @@ export const signUp = async (req, res, next) => {
     if (existingUser) {
         res.status(400).json({message: 'User already exists', user: existingUser})
     }
+    let newPassword = sha1(password)
     const user  = new User({
         name,
         email,
-        password,
+        password: newPassword,
         blogs: [],
         });
     try {

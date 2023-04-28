@@ -1,3 +1,4 @@
+import mongoose from "mongoose"
 import Blog from "../models/Blog";
 import User from "../models/User";
 
@@ -35,7 +36,7 @@ export const addBlog = async (req, res, next) => {
         const session = await mongoose.startSession();
         session.startTransaction();
         await blog.save({session});
-        existingUser.blog.push(blog);
+        existingUser.blogs.push(blog);
         await existingUser.save({session});
         await session.commitTransaction();
     } catch(err) {
@@ -50,7 +51,7 @@ export const updateBlog = async (req, res, next) => {
     const blogId = req.params.id;
     let blog;
     try {
-        const blog = await Blog.findByIdAndUpdate(blogId, {
+        blog = await Blog.findByIdAndUpdate(blogId, {
             title,
             description
         })
@@ -60,7 +61,7 @@ export const updateBlog = async (req, res, next) => {
     if (!blog) {
         return res.status(500).json({message: "Unable to update the blog"});
     }
-    return res.status(200).json({blog});   
+    return res.status(200).json({"message": "updated successfully"});
 };
 
 export const getById = async (req, res, next) => {
